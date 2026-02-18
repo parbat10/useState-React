@@ -10,7 +10,7 @@ function App() {
   // console.log(stdData.mathMarks);
   return (
     <>
-      <DataInput setStdData={setStdData}/>
+      <DataInput setStdData={setStdData }/>
       <StdResult stdData={stdData}/>
     </>
   )

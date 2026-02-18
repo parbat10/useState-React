@@ -14,6 +14,7 @@ const DataInput = ({setStdData}) => {
         physicsMarks:Number(physicsMarks)
       }
     );
+    stdResult(stdData);
     setName("");
     setMathMarks("");
     setScienceMarks("");

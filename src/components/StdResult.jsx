@@ -12,11 +12,13 @@ const StdResult = ({ stdData }) => {
 
   const overAllStatus = (mathStatus && scienceStatus && physicsStatus) == "pass" ? "pass" : "fail";
 
-  const mathPercent = (stdData.mathMarks / 100) * 100;
-  const sciencePercent = (stdData.scienceMarks / 75) * 100;
-  const physicsPercent = (stdData.physicsMarks / 75) * 100;
+  const mathPercent = ((stdData.mathMarks / 100) * 100).toFixed(2);
+  const sciencePercent = ((stdData.scienceMarks / 75) * 100).toFixed(2);
+  const physicsPercent = ((stdData.physicsMarks / 75) * 100).toFixed(2);
   return (
     <>
+    {stdData?
+    (
       <div className='std-result'>
         <h3>Name={name}</h3>
         <p>Math={mathMarks} in percentage={mathPercent}% status={mathStatus}</p>
@@ -24,6 +26,8 @@ const StdResult = ({ stdData }) => {
         <p>Physics={physicsMarks} in percentage={physicsPercent}% status={physicsStatus}</p>
         <p>OverAllStatus={overAllStatus}</p>
       </div>
+    ):<p>Loading</p>
+    }
     </>
   )
 }
